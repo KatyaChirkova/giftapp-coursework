@@ -1,24 +1,102 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f5f5f5;
+  background: #f4f5f7;
+  color: #222;
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 30px;
+  padding: 24px;
+}
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card,
+.gift-card,
+.header {
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card {
+  width: 360px;
+  text-align: center;
+}
+
+.card button {
+  width: 100%;
+  margin-top: 12px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.header h2 {
+  margin: 0;
+}
+
+.header nav {
+  display: flex;
+  gap: 10px;
+}
+
+.header div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 button {
   padding: 10px 16px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   background: #222;
   color: white;
   cursor: pointer;
+  font-size: 14px;
 }
 
 button:hover {
   background: #444;
+}
+
+button.danger {
+  background: #b00020;
+  margin-left: 10px;
+}
+
+button.danger:hover {
+  background: #8c001a;
+}
+
+.gift-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.gift-card h3 {
+  margin-top: 0;
+}
+
+.gift-card p {
+  line-height: 1.4;
 }

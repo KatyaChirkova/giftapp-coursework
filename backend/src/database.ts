@@ -1,3 +1,4 @@
+// файл подключения к PostgreSQL
 import { Pool } from 'pg';
 
 export const pool = new Pool({

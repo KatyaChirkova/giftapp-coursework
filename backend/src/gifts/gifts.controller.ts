@@ -1,3 +1,4 @@
+// принимает запросы для получения, добавления и удаления подарков
 import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post } from '@nestjs/common';
 import { GiftsService } from './gifts.service';
 

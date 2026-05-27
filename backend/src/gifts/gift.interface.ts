@@ -1,3 +1,4 @@
+// описание структуры подарка
 export interface Gift {
   id: number;
   title: string;

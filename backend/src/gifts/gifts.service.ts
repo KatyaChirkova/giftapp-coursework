@@ -1,3 +1,4 @@
+// выполняет основную логику работы с подарками
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { pool } from '../database';
 import { Gift } from './gift.interface';

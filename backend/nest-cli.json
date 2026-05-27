@@ -1,3 +1,4 @@
+// используется NestJS для сборки и запуска серверного приложения
 {
   "collection": "@nestjs/schematics",
   "sourceRoot": "src",

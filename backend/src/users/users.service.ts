@@ -3,6 +3,7 @@ import { ConflictException, Injectable, NotFoundException } from '@nestjs/common
 import { pool } from '../database';
 import { CreateUserDto } from './dto/create-user.dto';
 import { SafeUser, User } from './user.interface';
+import * as bcrypt from 'bcryptjs';
 
 @Injectable()
 export class UsersService {
@@ -37,20 +38,21 @@ export class UsersService {
     if (existingUser) {
       throw new ConflictException('Пользователь с таким email уже существует');
     }
+    const passwordHash = await bcrypt.hash(createUserDto.password, 10);
 
     const result = await pool.query(
-      `
+  `
       INSERT INTO users (name, email, age, password, role)
       VALUES ($1, $2, $3, $4, $5)
       RETURNING *
       `,
       [
-        createUserDto.name,
-        createUserDto.email,
-        createUserDto.age ?? null,
-        createUserDto.password,
-        createUserDto.role ?? 'user',
-      ],
+      createUserDto.name,
+      createUserDto.email,
+      createUserDto.age ?? null,
+      passwordHash,
+      createUserDto.role ?? 'user',
+       ],
     );
 
     return this.toSafeUser(result.rows[0]);

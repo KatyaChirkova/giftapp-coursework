@@ -1,3 +1,4 @@
+// содержит логику работы с пользователями и обращается к базе данных
 import { ConflictException, Injectable, NotFoundException } from '@nestjs/common';
 import { pool } from '../database';
 import { CreateUserDto } from './dto/create-user.dto';

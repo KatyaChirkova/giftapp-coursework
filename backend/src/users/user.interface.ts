@@ -1,3 +1,4 @@
+// описывает, какие поля есть у пользователя
 export type UserRole = 'user' | 'admin';
 
 export interface User {

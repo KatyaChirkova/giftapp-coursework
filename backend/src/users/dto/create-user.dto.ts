@@ -1,3 +1,4 @@
+// используется для валидации данных при создании пользователя через API /users
 import { IsEmail, IsIn, IsInt, IsNotEmpty, IsOptional, IsString, Min, MinLength } from 'class-validator';
 
 export class CreateUserDto {

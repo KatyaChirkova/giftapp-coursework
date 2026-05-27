@@ -1,3 +1,4 @@
+// принимает запрос на вход пользователя и передает данные в сервис
 import { Body, Controller, Post } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { LoginDto } from './dto/login.dto';

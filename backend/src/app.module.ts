@@ -1,3 +1,4 @@
+// объединяет основные части серверного приложения
 import { Module } from '@nestjs/common';
 import { AuthModule } from './auth/auth.module';
 import { GiftsModule } from './gifts/gifts.module';

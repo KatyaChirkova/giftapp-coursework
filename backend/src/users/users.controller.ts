@@ -1,3 +1,4 @@
+// отвечает за API-маршруты пользователей
 import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UsersService } from './users.service';

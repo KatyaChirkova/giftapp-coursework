@@ -1,5 +1,6 @@
 function Header({ user, setUser, page, setPage }) {
   const logout = () => {
+    localStorage.removeItem('token');
     localStorage.removeItem('currentUser');
     setUser(null);
     setPage('login');

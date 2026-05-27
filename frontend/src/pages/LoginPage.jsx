@@ -22,9 +22,10 @@ function LoginPage({ setUser, setPage }) {
 
     const data = await response.json();
 
-    localStorage.setItem('currentUser', JSON.stringify(data));
+    localStorage.setItem('token', data.token);
+    localStorage.setItem('currentUser', JSON.stringify(data.user));
 
-    setUser(data);
+    setUser(data.user);
     setPage('gifts');
   };
 

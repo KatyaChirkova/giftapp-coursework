@@ -13,6 +13,7 @@
     "bcryptjs": "^3.0.3",
     "class-transformer": "latest",
     "class-validator": "latest",
+    "jsonwebtoken": "^9.0.3",
     "pg": "latest",
     "reflect-metadata": "latest",
     "rxjs": "latest"
@@ -22,6 +23,7 @@
     "@nestjs/schematics": "latest",
     "@nestjs/testing": "latest",
     "@types/bcryptjs": "^2.4.6",
+    "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "latest",
     "@types/pg": "latest",
     "typescript": "latest"

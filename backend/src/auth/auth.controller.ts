@@ -1,5 +1,4 @@
-// принимает запрос на вход пользователя и передает данные в сервис
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Headers, Post } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { LoginDto } from './dto/login.dto';
 
@@ -10,5 +9,10 @@ export class AuthController {
   @Post('login')
   login(@Body() loginDto: LoginDto) {
     return this.authService.login(loginDto);
+  }
+
+  @Get('me')
+  me(@Headers('authorization') authorization: string) {
+    return this.authService.me(authorization);
   }
 }

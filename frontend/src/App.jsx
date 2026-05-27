@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Header from './components/Header';
 import FavoritesPage from './pages/FavoritesPage';
 import GiftsPage from './pages/GiftsPage';
@@ -25,6 +25,38 @@ function App() {
 
   const [user, setUser] = useState(savedUser);
   const [page, setPage] = useState(savedUser ? 'gifts' : 'login');
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+      return;
+    }
+
+    fetch('http://localhost:3000/auth/me', {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Токен недействителен');
+        }
+
+        return response.json();
+      })
+      .then((currentUser) => {
+        localStorage.setItem('currentUser', JSON.stringify(currentUser));
+        setUser(currentUser);
+        setPage('gifts');
+      })
+      .catch(() => {
+        localStorage.removeItem('token');
+        localStorage.removeItem('currentUser');
+        setUser(null);
+        setPage('login');
+      });
+  }, []);
 
   if (page === 'register') {
     return <RegisterPage setUser={setUser} setPage={setPage} />;

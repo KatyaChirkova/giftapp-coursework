@@ -20,11 +20,11 @@ function LoginPage({ setUser, setPage }) {
       return;
     }
 
-    const user = await response.json();
+    const data = await response.json();
 
-    localStorage.setItem('currentUser', JSON.stringify(user));
+    localStorage.setItem('currentUser', JSON.stringify(data));
 
-    setUser(user);
+    setUser(data);
     setPage('gifts');
   };
 
@@ -32,7 +32,7 @@ function LoginPage({ setUser, setPage }) {
     <div className="login-page">
       <form className="card" onSubmit={login}>
         <h1>GiftApp</h1>
-        <p>Веб-приложение для подбора подарков</p>
+        <p>Вход в приложение</p>
 
         <input
           type="email"
@@ -49,6 +49,14 @@ function LoginPage({ setUser, setPage }) {
         />
 
         <button type="submit">Войти</button>
+
+        <button
+          type="button"
+          className="secondary"
+          onClick={() => setPage('register')}
+        >
+          Зарегистрироваться
+        </button>
 
         <p className="hint">
           Тестовые данные: admin@gift.local / 1234

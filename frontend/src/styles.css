@@ -115,3 +115,27 @@ input {
   font-size: 13px;
   color: #666;
 }
+input,
+select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.secondary {
+  background: #666;
+  margin-top: 10px;
+}
+
+.secondary:hover {
+  background: #555;
+}
+
+.hint {
+  margin-top: 14px;
+  font-size: 13px;
+  color: #666;
+}

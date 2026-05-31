@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 function LoginPage({ setUser, setPage }) {
-  const [email, setEmail] = useState('admin@gift.local');
-  const [password, setPassword] = useState('1234');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const login = async (event) => {
     event.preventDefault();
@@ -59,9 +59,6 @@ function LoginPage({ setUser, setPage }) {
           Зарегистрироваться
         </button>
 
-        <p className="hint">
-          Тестовые данные: admin@gift.local / 1234
-        </p>
       </form>
     </div>
   );

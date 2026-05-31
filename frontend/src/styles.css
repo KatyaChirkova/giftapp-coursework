@@ -4,15 +4,15 @@
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f4f5f7;
-  color: #222;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  background: #eaf4fb;
+  color: #1f2d3d;
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 1180px;
   margin: 0 auto;
-  padding: 24px;
+  padding: 28px;
 }
 
 .login-page {
@@ -20,37 +20,53 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 24px;
 }
 
-.card,
-.gift-card,
-.header {
-  background: white;
-  border-radius: 14px;
-  padding: 20px;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
-}
-
+/* Форма входа и регистрации */
 .card {
-  width: 360px;
+  width: 410px;
   text-align: center;
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 34px 32px;
+  border: 2px solid #9ccbe3;
+  box-shadow: 0 10px 28px rgba(39, 89, 128, 0.14);
+}
+
+.card h1 {
+  margin: 0 0 12px;
+  font-size: 38px;
+  color: #1f6f9f;
+}
+
+.card p {
+  color: #587386;
 }
 
 .card button {
   width: 100%;
-  margin-top: 12px;
+  margin-top: 14px;
 }
 
+/* Верхняя панель */
 .header {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 18px 24px;
+  box-shadow: 0 8px 22px rgba(39, 89, 128, 0.12);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
+  border: 2px solid #9ccbe3;
 }
 
 .header h2 {
   margin: 0;
+  font-size: 30px;
+  color: #1f6f9f;
 }
 
 .header nav {
@@ -64,78 +80,100 @@ body {
   gap: 12px;
 }
 
+/* Кнопки */
 button {
-  padding: 10px 16px;
+  padding: 11px 18px;
   border: none;
-  border-radius: 8px;
-  background: #222;
+  border-radius: 10px;
+  background: #2d9cdb;
   color: white;
   cursor: pointer;
   font-size: 14px;
+  font-weight: 600;
+  transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 button:hover {
-  background: #444;
+  background: #1f83bd;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(45, 156, 219, 0.25);
 }
 
 button.danger {
-  background: #b00020;
+  background: #e78aa8;
   margin-left: 10px;
 }
 
 button.danger:hover {
-  background: #8c001a;
+  background: #d96f94;
+  box-shadow: 0 6px 16px rgba(217, 111, 148, 0.24);
 }
 
+.secondary {
+  background: #d8edf8;
+  color: #1f6f9f;
+  margin-top: 10px;
+  border: 1px solid #b9d4e6;
+}
+
+.secondary:hover {
+  background: #c4e2f3;
+  box-shadow: none;
+}
+
+/* Сетка подарков */
 .gift-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 20px;
+}
+
+/* Карточки подарков в одном стиле с формой */
+.gift-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 22px;
+  border: 1px solid #9ccbe3;
+  box-shadow: 0 8px 22px rgba(39, 89, 128, 0.10);
 }
 
 .gift-card h3 {
   margin-top: 0;
+  color: #155f89;
+  font-size: 22px;
 }
 
 .gift-card p {
-  line-height: 1.4;
+  line-height: 1.5;
+  color: #42596b;
 }
 
-input {
-  width: 100%;
-  padding: 10px 12px;
-  margin-top: 10px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 14px;
+.gift-card strong {
+  color: #1f6f9f;
 }
 
-.hint {
-  margin-top: 14px;
-  font-size: 13px;
-  color: #666;
-}
+/* Поля ввода */
 input,
 select {
   width: 100%;
-  padding: 10px 12px;
-  margin-top: 10px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  padding: 12px 14px;
+  margin-top: 12px;
+  border: 1px solid #b9d4e6;
+  border-radius: 10px;
   font-size: 14px;
+  background: #f8fcff;
+  color: #1f2d3d;
 }
 
-.secondary {
-  background: #666;
-  margin-top: 10px;
-}
-
-.secondary:hover {
-  background: #555;
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #2d9cdb;
+  box-shadow: 0 0 0 3px rgba(45, 156, 219, 0.16);
 }
 
 .hint {
   margin-top: 14px;
   font-size: 13px;
-  color: #666;
+  color: #6f8798;
 }

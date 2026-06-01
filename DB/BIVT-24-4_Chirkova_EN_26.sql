@@ -75,10 +75,8 @@ CREATE TABLE favorites (
 -- 2. ТЕСТОВЫЕ ДАННЫЕ
 
 INSERT INTO users (name, email, age, password, role) VALUES
-('Администратор', 'admin@gift.local', 20, '1234', 'admin'),
-('Пользователь', 'user@gift.local', 19, '1234', 'user'),
-('Екатерина', 'katya@gift.local', 18, '1234', 'user'),
-('Мария', 'maria@gift.local', 21, '1234', 'user');
+('Администратор', 'admin@gift.local', 20, '$2b$10$UMGvMc6HdyNRDFAC.tFmj.lk/RHygoJLZbyW0ffQdxF6mKZpj2D1W', 'admin'),
+('Пользователь', 'user@gift.local', 19, '$2b$10$UMGvMc6HdyNRDFAC.tFmj.lk/RHygoJLZbyW0ffQdxF6mKZpj2D1W', 'user');
 
 INSERT INTO categories (name, description) VALUES
 ('Техника', 'Электронные устройства и аксессуары'),
@@ -96,9 +94,7 @@ INSERT INTO gifts (title, description, price, category_id, created_by) VALUES
 
 INSERT INTO favorites (user_id, gift_id) VALUES
 (2, 1),
-(2, 3),
-(3, 5),
-(4, 2);
+(2, 3);
 
 -- 3. ПРЕДСТАВЛЕНИЯ
 
